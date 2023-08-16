@@ -11,6 +11,9 @@
     input[type=text] {
         text-align: right;
     }
+    ::placeholder {
+        color: black;
+    }
 
 </style>
 <body>
@@ -18,10 +21,10 @@
         <div>
         </div>
         <div>
-            <button>CLR</button>
-            <input type="text" id="display" value="0" readonly>
+            <button onclick="clearDisplay()">CLR</button>
+            <input type="text" id="display" value="" readonly placeholder="0">
         </div>
-        <div>
+        <div id="operation">
             <button>ADD</button>
             <button>SUB</button>
             <button>MUL</button>

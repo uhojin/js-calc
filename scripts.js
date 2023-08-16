@@ -1,20 +1,31 @@
 const display = document.getElementById("display");
-// const numberButtons = document.querySelectorAll('#num button');
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('#num button, #operation button');
+const numberButtons = Array.from(document.querySelectorAll('#num button'));
+const operationButtons = Array.from(document.querySelectorAll('#operation button'));
 let num1, num2, operator;
-// let displayValue = display.value;
 
 buttons.forEach(button => button.addEventListener('click', updateDisplay));
 
-console.log(display.classList);
+console.log(display.id);
+console.log(operationButtons);
+console.log(numberButtons);
 
 function updateDisplay() {
+    // if (this.textContent === 'CLR') return;
     if (typeof(num1) === 'undefined') {
-
+        // if (operationButtons.includes(this)) {
+        //     return;
+        // }
         display.value += this.textContent;
-        console.log(this.classList);
+        // console.log(this.id);
     }
-        // console.log(display.value);
+        console.log(display.value);
+
+    
+}
+
+function clearDisplay() {
+    display.value = "";
 }
 
 function add(a, b) {
