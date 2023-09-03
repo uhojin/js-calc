@@ -1,19 +1,35 @@
 const display = document.getElementById("display");
-const buttons = document.querySelectorAll('#num button, #operation button');
-const numberButtons = Array.from(document.querySelectorAll('#num button'));
-const operationButtons = Array.from(document.querySelectorAll('#operation button'));
+const buttons = document.querySelectorAll('.num, .operation');
+const numberButtons = Array.from(document.querySelectorAll('.num'));
+const operationButtons = Array.from(document.querySelectorAll('.operation'));
 let num1, operator, answer;
 
 // buttons.forEach(button => button.addEventListener('click', updateDisplay));
 numberButtons.forEach(button => button.addEventListener('click', numberInput))
 operationButtons.forEach(button => button.addEventListener('click', operatorInput))
 
+function remove() {
+    
+}
+
+function insertDecimal() {
+    if (!display.value) {
+        display.value += "0."
+    } else {
+        if (!display.value.includes('.')) {
+            display.value += '.'
+        }
+    }
+}
 
 function numberInput() {
-    console.log("number");
+    // console.log("number");
     
     if (this.textContent == 0 && display.value == 0) {
         console.log('zero pressed twice, ignoring');
+    } else if (this.textContent == '.' && display.value.includes('.')) {
+        console.log('double period');
+        return;
     } else {
         display.value += this.textContent;
     }
@@ -22,15 +38,15 @@ function numberInput() {
 function operatorInput() {
     if (!display.value) {
         if (num1) {
-            operator = this.textContent;
+            operator = this.value;
         }
     } else if (display.value) {
         if (num1) {
             answer = calculate();
-            operator = this.textContent;
+            operator = this.value;
         } else if (!num1) {
             num1 = display.value;
-            operator = this.textContent;
+            operator = this.value;
             display.value = '';
         }
     }

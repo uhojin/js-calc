@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+table {
+    display: inline;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    font-weight: bold;
+    border-bottom: #333 1rem solid;
+    background-color: lightgray;
+    margin: 0;
+    font-size: 1.5rem;
+    width: 100%;
+    color: #333;
+}
+
+
+input[type=text] {
+    text-align: right;
+    border-radius: .1em;
+    border: 2px solid;
+    font-size: 3rem;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: black;
+}
+
+button {
+    padding: .75em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: .5em;
+    cursor: pointer;
+    border: .1em;
+    border-color: #333;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #d9d9d9;
+    transform: scale(1.1);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.main {
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.operational {
+    display: flex;
+    justify-content: space-between;
+    /* margin: .2em; */
+}
+
+.operational button {
+    margin-bottom: .1em;
+}
+
+#left button, #right button {
+    margin: .25em 0;
+}
+
+#left button {
+    margin: .25em;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+}
+
+#calculator {
+    border: 2px solid;
+    margin: 2em;
+    padding: 1em;
+    border-radius: 10px;
+}

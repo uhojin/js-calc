@@ -4,45 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts.js" defer></script>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+
     <title>js-calc</title>
 </head>
 <style>
-    input[type=text] {
-        text-align: right;
-    } 
-    ::placeholder {
-        color: black;
-    }
+ 
 
 </style>
 <body>
-   <div>
-        <div>
+    <header>
+        <h1>js-calc</h1>
+    </header>
+   <div id="calculator">
+    <div class="main">
+        <div class="display">
+            <input type="text" id="display" value="" readonly placeholder="0" size="9">
         </div>
-        <div>
-            <button onclick="clearDisplay()">CLR</button>
-            <input type="text" id="display" value="" readonly placeholder="0">
-            <button onclick="calculate()">CALCULATE</button>
-        </div>
-        <div id="operation">
-            <button>ADD</button>
-            <button>SUB</button>
-            <button>MUL</button>
-            <button>DIV</button>
-        </div>
-        <div id="num">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>0</button>
-        </div>
-   </div> 
+            <div class="topbar">
+                
+            </div>
+            <div class="buttons">
+                <div class="operational">
+                    <button onclick="clearDisplay()">CLR</button>
+                    <button value="DEL"><-</button>
+                </div>
+
+                <div class="inputs">
+                    <div id="left">
+                        <div>
+                            <button class="num">7</button>
+                            <button class="num">8</button>
+                            <button class="num">9</button>
+                        </div>
+                           
+                        <div>
+                            <button class="num">4</button>
+                            <button class="num">5</button>
+                            <button class="num">6</button>
+                        </div>
+             
+                        <div>
+                            <button class="num">1</button>
+                            <button class="num">2</button>
+                            <button class="num">3</button>
+                        </div>
+                        
+                        <div>
+                            <button onclick="insertDecimal()">.</button>
+                            <button class="num">0</button>
+                            
+                        </div>
+                        
+                    </div>
+    
+                    <div id="right">
+                        
+                            <button class="operation" value="DIV">DIV</button>
+                            <button class="operation" value="MUL">MUL</button>
+                            <button class="operation" value="SUB">SUB</button>
+                            <button class="operation" value="ADD">ADD</button>
+                            <button onclick="calculate()"> = </button>
+                    </div>
+                </div>
+            </div>
+       </div> 
+    </div>
 </body>
 </html>
